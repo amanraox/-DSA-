@@ -1,9 +1,16 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        string s=to_string(x);
-        for(int i=s.size()-1,j=0;i>=0;i--,j++)
-            if(s[i]!=s[j])return 0;
-        return 1;
+        if (x < 0) 
+            return false;
+        long long reversed = 0;
+        long long temp = x;
+        while (temp != 0) 
+        {
+            int digit = temp % 10;
+            reversed = reversed * 10 + digit;
+            temp /= 10;
+        }
+        return (reversed == x);
     }
 };
