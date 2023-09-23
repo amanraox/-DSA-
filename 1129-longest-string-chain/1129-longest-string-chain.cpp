@@ -7,7 +7,7 @@ class Solution {
             if(j < m && s[i] == p[j]) j++;
             i++;
         }
-        return  j == m;
+        return i==n & j== m;
     }
 public:
 
