@@ -6,7 +6,7 @@ public:
         tower[0][0] = poured;
 
         for (int i = 0; i < query_row; i++) {
-            for (int j = 0; j <= min(i, query_row) ; j++) {
+            for (int j = 0; j <= min(i, query_row+1) ; j++) {
                 double overflow = max(0.0, tower[i][j]-1) / 2;
                 tower[i + 1][j] += overflow;
                 tower[i + 1][j + 1] += overflow;
