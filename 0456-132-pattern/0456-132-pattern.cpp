@@ -16,7 +16,7 @@ public:
                if(it != st.end() && (*it) < nums[i])
                return true;
             }
-            st.insert(nums[i-1]);
+            st.insert(nums[i]);
         }
         return false;
     }
