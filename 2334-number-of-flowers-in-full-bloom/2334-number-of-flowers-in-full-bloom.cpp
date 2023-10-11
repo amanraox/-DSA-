@@ -5,7 +5,7 @@ public:
         for (auto it: flowers)
         {
             start.push_back(it[0]);
-            end.push_back(it[0+1]);
+            end.push_back(it[1]);
         }
         sort(start.begin(),start.end());
         sort(end.begin(),end.end());
