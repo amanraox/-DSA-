@@ -16,7 +16,7 @@ public:
         return (dp0[a] + dp0[e] + dp0[i] + dp0[o] + dp0[u]) % MOD;
     }
     enum vowel {
-        a = 0,
+        a,
         e,
         i,
         o,
