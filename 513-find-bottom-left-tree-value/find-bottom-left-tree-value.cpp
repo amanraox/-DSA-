@@ -18,7 +18,7 @@ public:
         int res=0;
         while(q.size()){
             int sz = q.size();
-            res = q.front()->val;   // first node value for current level
+            res = q.front()->val;   
             while(sz--){
                 TreeNode* curr = q.front();
                 q.pop();
