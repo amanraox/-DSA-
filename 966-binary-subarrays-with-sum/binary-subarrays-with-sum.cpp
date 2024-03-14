@@ -17,7 +17,6 @@ int atmostSumK(vector<int> nums, int goal){
     }
 
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-       int k = atmostSumK(nums,goal) - atmostSumK(nums,goal-1);
-        return k;        
+       return atmostSumK(nums,goal) - atmostSumK(nums,goal-1);     
     }
 };
