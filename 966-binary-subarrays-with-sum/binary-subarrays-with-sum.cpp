@@ -1,27 +1,23 @@
 class Solution {
 public:
-int atMost(vector<int> &v, int target, int n) {
-        if (target < 0) return 0;
-        int i = 0, j = 0, sm = 0, ans = 0;
+int atmostSumK(vector<int> nums, int goal){
+        if(goal<0)
+            return 0;
+        int i = 0, n = nums.size(), count =0,sum=0;
 
-        while (j < n)
-        {
-            sm += v[j];
-            while (sm > target)
-            {
-                sm -= v[i];
-                ++i;
+        for(int j = 0;j<n;j++){
+            sum+=nums[j];
+            while(sum>goal){
+                sum -=nums[i];
+                i++;
             }
-            int cur_len = j - i + 1;
-            ans += (cur_len);
-            ++j;
+            count = count+(j-i+1);
         }
-
-        return ans;
+        return count;
     }
 
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-        int N = nums.size();
-        return atMost(nums, goal, N) - atMost(nums, goal-1, N);        
+       int k = atmostSumK(nums,goal) - atmostSumK(nums,goal-1);
+        return k;        
     }
 };
