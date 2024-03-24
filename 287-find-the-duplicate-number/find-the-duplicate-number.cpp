@@ -2,7 +2,7 @@ class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
         unordered_map<int, int> count;
-    int ans=0;
+    int ans;
     for(int i : nums){
         count[i]++;
         if(count[i]>1){
