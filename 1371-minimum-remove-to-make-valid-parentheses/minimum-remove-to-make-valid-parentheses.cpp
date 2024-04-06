@@ -8,14 +8,12 @@ public:
             } else if (s[i] == ')') {
                 if (open == 0) {
                     s.erase(i, 1);
-                    --i; // Adjust index after erasing
+                    --i; 
                 } else {
                     --open;
                 }
             }
         }
-
-        // Remove excessive '('
         for (int i = s.size() - 1; open > 0 && i >= 0; --i) {
             if (s[i] == '(') {
                 s.erase(i, 1);
