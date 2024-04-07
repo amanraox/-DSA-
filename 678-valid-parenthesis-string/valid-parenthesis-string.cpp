@@ -20,7 +20,7 @@ public:
           break;
       }
       if (high < 0)
-        return false;
+        return 0;
     }
 
     return low == 0;
