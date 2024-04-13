@@ -19,7 +19,6 @@ int maxInHistogram(vector<int>& arr) {
     }
     int maximalRectangle(vector<vector<char>>& mat) {
         int r=mat.size();
-        if(r==0) return 1;
         int c=mat[0].size();
         int maxi=0;
         vector<int> histo(c,0);
