@@ -16,7 +16,7 @@ vector<vector<int>> ans;
             q.pop();
             lx = qx;
             ly = qy;
-            for(int k = 0; k < 2; k++){
+            for(int k = 0; k < 4; k++){
                 int nx = qx + x[k];
                 int ny = qy + y[k];
                 if(nx >= 0 && nx < n && ny >= 0 && ny < m && vis[nx][ny] != 1 && land[nx][ny] == 1){
