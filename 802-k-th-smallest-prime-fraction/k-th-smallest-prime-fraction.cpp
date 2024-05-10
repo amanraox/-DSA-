@@ -5,7 +5,7 @@ public:
         priority_queue<pair<double,pair<int,int>>> pq;
 
         for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){
+            for(int j=i+1;j<n;j++){
                 double x = arr[i]/(arr[j]*1.0);
                 
                 if(pq.size() == k){
