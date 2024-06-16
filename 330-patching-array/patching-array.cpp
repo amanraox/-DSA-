@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minPatches(vector<int>& nums, int n) {
-        long long sum = 0;
+        long long sum = 1;
         int ans=0;
         while(sum<=n)
         {
