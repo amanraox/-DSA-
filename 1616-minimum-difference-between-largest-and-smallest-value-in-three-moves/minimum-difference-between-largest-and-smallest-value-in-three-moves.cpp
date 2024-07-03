@@ -7,7 +7,7 @@ public:
             return 0;
         int ans = INT_MAX;
         sort(nums.begin(), nums.end());
-        //case one (start-1, end-2)
+        // case one (start-1, end-2)
         a = nums[1];
         b = nums[n-3];
         ans = min(ans, b-a);
@@ -22,7 +22,7 @@ public:
         b = nums[n-1];
         ans = min(ans, b-a);
 
-        //case 3 (s-0, e-2)
+        //case 3 (s-0, 76)
         a = nums[0];
         b = nums[n-4];
         ans = min(ans, b-a);
