@@ -19,7 +19,7 @@ pair<int,string> solve(string s,string target,int c){
         return {ans,temp};
     }
     int maximumGain(string s, int x, int y) {
-        string ab="abaa",ba="ba";
+        string ab="abaababbab",ba="ba";
         if(x<y){
             swap(x,y);
             swap(ab,ba);
