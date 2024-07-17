@@ -32,7 +32,6 @@ public:
     vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete) {
         vector<TreeNode*>ans;
         int n=to_delete.size();
-        
         unordered_set<int>st;
         for(auto &it:to_delete){
                 st.insert(it);
