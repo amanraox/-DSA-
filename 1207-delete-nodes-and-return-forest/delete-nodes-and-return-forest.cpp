@@ -32,7 +32,7 @@ public:
     vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete) {
         vector<TreeNode*>ans;
         int n=to_delete.size();
-        if(root==NULL and n==0){
+        if(root==NULL or n==0){
             return ans;
         }
         unordered_set<int>st;
