@@ -8,11 +8,8 @@ public:
         {
             if(bills[i]==5)++fi;
             else if(bills[i]==10)--fi,++te;
-            else 
-            {
-                if(te)--te,--fi;
-                else fi-=3;
-            }
+            else if(te)--te,--fi;
+            else fi-=3;
             if(fi<0)return 0;
         }
         return 1;
