@@ -96,69 +96,55 @@ struct Node {
 */
 class Solution {
   public:
+    void solve(int &maxi,Node* root){
+      
+      if(root==NULL)
+      return;
+      maxi=max(maxi,root->data);
+      solve(maxi,root->left);
+      solve(maxi,root->right);
+      
+  }
+  void constructGraph(Node* root,vector<int>adj[]){
+      
+      if(root==NULL)
+      return;
+      if(root->left){
+          adj[root->data].push_back(root->left->data);
+          adj[root->left->data].push_back(root->data);
+      }
+      if(root->right){
+          adj[root->data].push_back(root->right->data);
+          adj[root->right->data].push_back(root->data);
+      }
+      constructGraph(root->left,adj);
+      constructGraph(root->right,adj);
+  }
     int minTime(Node* root, int target) 
     {
-unordered_map<Node *, Node *> parents;
-        if (root==NULL){
-            return {};
-        }
-        queue<Node *> q;
-        q.push(root);
-        parents[root] = nullptr;
-        Node *t;
-        while(!q.empty()){
-            int size = q.size();
-
-            for (int i = 0; i < size; i++){
-                Node *curr = q.front();
-                q.pop();
-                if (curr->data == target){
-                    t = curr;
-                }
-
-                if (curr->left!=nullptr){
-                    q.push(curr->left);
-                    parents[curr->left] = curr;
-                }
-
-                if (curr->right!=nullptr){
-                    q.push(curr->right);
-                    parents[curr->right] = curr;
+        int maxi=-1;
+        solve(maxi,root);
+        vector<int>adj[maxi+1];
+        constructGraph(root,adj);
+        queue<pair<int,int>>q;
+        vector<bool>visit(maxi+1,false);
+        q.push({0,target});
+        visit[target]=true;
+        int ans=0;
+        while(q.empty()==false){
+            int dist=q.front().first;
+            int u=q.front().second;
+            q.pop();
+            ans=max(ans,dist);
+            for(auto v:adj[u]){
+                if(visit[v]==false){
+                    visit[v]=true;
+                    q.push({dist+1,v});
                 }
             }
         }
-        unordered_map<Node*, int> visited;
-        queue<Node *> bfs;
-        bfs.push(t);
-        int ans = 0;
-        while(!bfs.empty()){
-            int size = bfs.size();
-            
-            for (int j = 0; j < size; j++){
-                Node *curr = bfs.front();
-                bfs.pop();
-                visited[curr] = 1;
-                if (parents[curr] != nullptr){
-                    if (visited.find(parents[curr]) == visited.end()){
-                        bfs.push(parents[curr]);
-                    }
-                }
-
-                if (curr->left != nullptr){
-                    if (visited.find(curr->left) == visited.end()){
-                        bfs.push(curr->left);
-                    }
-                }
-                if (curr->right != nullptr){
-                    if (visited.find(curr->right) == visited.end()){
-                        bfs.push(curr->right);
-                    }
-                }
-            }
-            ans++;
-        }
-
-        return ans-1;    }
+        return ans;
+    }
 };
 
 //{ Driver Code Starts.
