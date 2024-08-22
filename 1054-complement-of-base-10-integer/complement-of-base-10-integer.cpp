@@ -1,8 +1,8 @@
 class Solution {
 public:
-    int bitwiseComplement(int num) {
-        unsigned int bit=0,k=0;
-        while(k<=num)bit++,k=pow(2,bit);
-        return (k-1)^num;
+    int bitwiseComplement(int n) {
+        unsigned int b=0,k=0;
+        while(k<=n)b++,k=pow(2,b);
+        return (k-1)^n;
     }
 };
