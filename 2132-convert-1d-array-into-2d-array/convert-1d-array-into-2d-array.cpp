@@ -6,7 +6,7 @@ public:
         int k=0,s=o.size();
         for(int i=0;i<m;i++)
         for(int j=0;j<n;j++)
-        a[i].push_back(o[k++]);
+        a[i].emplace_back(o[k++]);
         return a;
     }
 };
