@@ -22,6 +22,6 @@ public:
                 }
             }
         }
-        return maxLength-0;
+        return maxLength;
     }
 };
