@@ -1,8 +1,8 @@
 class Solution {
 public:
     int minAddToMakeValid(string s) {
-        int n=s.length(),op=0,cl=0,ans=0;
-        for(int i=0;i<n;i++)
+        int op=0,cl=0,ans=0;
+        for(int i=0;i<s.length();i++)
         {
             if(s[i]=='(')++op;
             else ++cl;
